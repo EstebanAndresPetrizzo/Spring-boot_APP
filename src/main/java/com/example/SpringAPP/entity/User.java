@@ -6,8 +6,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
-@Entity (name = "usuario")
-class usuario implements Serializable {
+@Entity (name = "userApp")
+public class User implements Serializable {
 
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO, generator = "user_seq")
@@ -32,7 +32,7 @@ class usuario implements Serializable {
     @JoinColumn(name = "role", referencedColumnName = "role_id")
     private Role rol;
 
-    public usuario(Long id) {
+    public User(Long id) {
         this.id = id;
     }
 
@@ -104,15 +104,15 @@ class usuario implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        usuario usuario = (usuario) o;
-        return Objects.equals(id, usuario.id) &&
-                Objects.equals(firstName, usuario.firstName) &&
-                Objects.equals(lastName, usuario.lastName) &&
-                Objects.equals(email, usuario.email) &&
-                Objects.equals(userName, usuario.userName) &&
-                Objects.equals(password, usuario.password) &&
-                Objects.equals(confirmPassword, usuario.confirmPassword) &&
-                Objects.equals(rol, usuario.rol);
+        User user = (User) o;
+        return Objects.equals(id, user.id) &&
+                Objects.equals(firstName, user.firstName) &&
+                Objects.equals(lastName, user.lastName) &&
+                Objects.equals(email, user.email) &&
+                Objects.equals(userName, user.userName) &&
+                Objects.equals(password, user.password) &&
+                Objects.equals(confirmPassword, user.confirmPassword) &&
+                Objects.equals(rol, user.rol);
     }
 
     @Override
