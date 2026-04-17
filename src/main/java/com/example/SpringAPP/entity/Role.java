@@ -5,7 +5,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
-
+//asd
 
 @Entity (name = "role")
 public class Role implements Serializable {
